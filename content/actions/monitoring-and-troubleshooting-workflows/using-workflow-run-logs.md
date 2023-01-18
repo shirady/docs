@@ -96,26 +96,26 @@ After deleting logs, the **Delete all logs** button is removed to indicate that 
 
 {% data reusables.cli.cli-learn-more %}
 
-To view the log for a specific job, use the `run view` subcommand. Replace `run-id` with the ID of run that you want to view logs for. {% data variables.product.prodname_cli %} returns an interactive menu for you to choose a job from the run. If you don't specify `run-id`, {% data variables.product.prodname_cli %} returns an interactive menu for you to choose a recent run, and then returns another interactive menu for you to choose a job from the run.
+To view the log for a specific job, use the `run view` subcommand. Replace `<RUN_ID>` with the ID of run that you want to view logs for. {% data variables.product.prodname_cli %} returns an interactive menu for you to choose a job from the run. If you don't specify `<RUN_ID>`, {% data variables.product.prodname_cli %} returns an interactive menu for you to choose a recent run, and then returns another interactive menu for you to choose a job from the run.
 
 ```shell
-gh run view RUN_ID --log
+gh run view <RUN_ID> --log
 ```
 
-You can also use the `--job` flag to specify a job ID. Replace `job-id` with the ID of the job that you want to view logs for.
+You can also use the `--job` flag to specify a job ID. Replace `<JOB_ID>` with the ID of the job that you want to view logs for.
 
 ```shell
-gh run view --job JOB_ID --log
+gh run view --job <JOB_ID> --log
 ```
 
 You can use `grep` to search the log. For example, this command will return all log entries that contain the word `error`.
 
 ```shell
-gh run view --job JOB_ID --log | grep error
+gh run view --job <JOB_ID> --log | grep error
 ```
 
 To filter the logs for any failed steps, use `--log-failed` instead of `--log`.
 
 ```shell
-gh run view --job JOB_ID --log-failed
+gh run view --job <JOB_ID> --log-failed
 ```
